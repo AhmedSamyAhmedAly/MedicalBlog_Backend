@@ -1,16 +1,16 @@
-## About
+# About
 this is medical blog back-end application contains users , posts ,comments and reacts using node js
 
-## deployed link
+# deployed link
 https://medical-blog001.herokuapp.com
 
-## routes
-# Users
+# routes
+## Users
 
 post
 /Api/Users/reg
 
-#input example
+### input example
 {
     "username":"ahmed1",
     "email":"a1@a.com",
@@ -28,23 +28,24 @@ input example
 }
 
 
-#all th next routes will need
-access_token : token
-in the headers
+### all th next routes will need
+### access_token : token
+### in the headers
 
 get
 Api/Users/getUsers
 Api/Users/MyPosts
 Api/Users/myProfile
 
-## posts
+# posts
 
 get
 Api/Posts/getPost/:id
 
 post
 Api/Posts/addPost
-#input example
+
+### input example
 {
     "title":"my 111111111111111 post",
     "PostBody":"my first postmy first postmy first postmy first postmy first postmy first post"
@@ -56,11 +57,12 @@ Api/Posts/updatePost/:id
 delete
 Api/Posts/deletePost/:id
 
-## comments
+# comments
 
 post
 Api/Comments/addComment/:id
-input example
+
+### input example
 {
     "CommentBody":"CommentBodyCommentBodyCommentBodyCommentBodyCommentBodyCommentBodyCommentBody"
 }
@@ -71,10 +73,11 @@ Api/Comments/updateComment/:id/:cid
 delete
 Api/Comments/deleteComment/:id/:cid
 
-## reacts
+# reacts
 
 post
 Api/Reacts/addReact/:id/
+
 # input example
 {
     "ReactType":"Angry"
@@ -85,3 +88,6 @@ Api/Reacts/updateReact/:id/:rid
 
 delete
 Api/Reacts/deleteReact/:id/:rid
+
+
+Ahmedsamy.Ahmedelsamy@gmail.com
