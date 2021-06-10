@@ -5,7 +5,7 @@ this is medical blog back-end application contains users , posts ,comments and r
 https://medical-blog001.herokuapp.com
 
 # routes
-## Users
+# Users
 
 post
 /Api/Users/reg
@@ -78,7 +78,7 @@ Api/Comments/deleteComment/:id/:cid
 post
 Api/Reacts/addReact/:id/
 
-# input example
+### input example
 {
     "ReactType":"Angry"
 }
