@@ -3,7 +3,7 @@ const User = require('../Models/User')
 const Posts = require('../Models/Post')
 const helper = require('../RoutesHelpers/PostHelper')
 const postsRouter = new express.Router();
-
+//____________________________________________________________________________________________________________________________________
 
 postsRouter.get('/getPost'  , async (req,res)=>{
     try{                                       
@@ -16,7 +16,7 @@ postsRouter.get('/getPost'  , async (req,res)=>{
         res.json({ success: false, message: err.message });
     }
 })
-
+//____________________________________________________________________________________________________________________________________
 postsRouter.get('/getPost/:id' , async (req, res) => {
     try{   
         const userById = await User.findById(req.signedData.id);        //update post
@@ -34,7 +34,7 @@ postsRouter.get('/getPost/:id' , async (req, res) => {
         res.json({success: false, message: err.message});
     }
     })
-
+//____________________________________________________________________________________________________________________________________
 postsRouter.post('/addPost'  , async (req,res)=>{
     try{                                       
         console.log(req.signedData);
@@ -54,7 +54,7 @@ postsRouter.post('/addPost'  , async (req,res)=>{
         res.json({ success: false, message: err.message });
     }
 })
-
+//____________________________________________________________________________________________________________________________________
 postsRouter.patch('/updatePost/:id' , async (req, res) => {
     try{   
         const userById = await User.findById(req.signedData.id);        //update post
@@ -74,7 +74,7 @@ postsRouter.patch('/updatePost/:id' , async (req, res) => {
         res.json({success: false, message: err.message});
     }
     })
-
+//____________________________________________________________________________________________________________________________________
 
 postsRouter.delete('/deletePost/:id' , async (req, res) => {
     try{   
@@ -94,7 +94,7 @@ postsRouter.delete('/deletePost/:id' , async (req, res) => {
         res.json({success: false, message: err.message});
     }
     })
-
+//____________________________________________________________________________________________________________________________________
 
 
 

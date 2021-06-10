@@ -1,5 +1,5 @@
 const Post = require('../Models/Post')
-
+//____________________________________________________________________________________________________________________________________
 exports.Myposts= async(arrayofposts)=>{
     var myposts = [];
     for(i=0;i<arrayofposts.length;i++)
@@ -8,7 +8,7 @@ exports.Myposts= async(arrayofposts)=>{
     }
     return  myposts;
 }   
-
+//____________________________________________________________________________________________________________________________________
 exports.deleteMyposts= async(arrayofposts)=>{
     for(i=0;i<arrayofposts.length;i++)
     {   

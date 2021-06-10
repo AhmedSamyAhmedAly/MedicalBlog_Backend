@@ -24,8 +24,7 @@ app.use('/Api/Posts',authenticationMiddleware,Posts)
 app.use('/Api/Comments',authenticationMiddleware,Comments)
 app.use('/Api/Reacts',authenticationMiddleware,Reacts)
 
-
 //_______________________port configuration_______________________
-app.listen(process.env.PORT || 3000,() =>{
+module.exports = app.listen(process.env.PORT || 3000,() =>{
     console.info("Server now listen on PORT 3000");
 })

@@ -3,7 +3,7 @@ const User = require('../Models/User')
 const Posts = require('../Models/Post')
 const helper = require('../RoutesHelpers/PostHelper')
 const CommentsRouter = new express.Router();
-
+//____________________________________________________________________________________________________________________________________
 CommentsRouter.post('/addComment/:id' , async (req, res) => {
     try{   
         const userById = await User.findById(req.signedData.id);  
@@ -25,7 +25,7 @@ CommentsRouter.post('/addComment/:id' , async (req, res) => {
         res.json({success: false, message: err.message});
     }
     })
-
+//____________________________________________________________________________________________________________________________________
 CommentsRouter.patch('/updateComment/:id/:cid' , async (req, res) => {
     try{   
         const userById = await User.findById(req.signedData.id);  
@@ -53,9 +53,7 @@ CommentsRouter.patch('/updateComment/:id/:cid' , async (req, res) => {
         res.json({success: false, message: err.message});
     }
     })
-
-
-
+//____________________________________________________________________________________________________________________________________
     CommentsRouter.delete('/deleteComment/:id/:cid' , async (req, res) => {
         try{   
             const userById = await User.findById(req.signedData.id);  
@@ -81,7 +79,7 @@ CommentsRouter.patch('/updateComment/:id/:cid' , async (req, res) => {
             res.json({success: false, message: err.message});
         }
         })
-
+//____________________________________________________________________________________________________________________________________
 module.exports = CommentsRouter;
 
 

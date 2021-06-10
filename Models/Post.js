@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// post model
 const PostSchema = new mongoose.Schema({
 
     author: {

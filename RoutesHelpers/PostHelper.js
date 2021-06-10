@@ -6,7 +6,7 @@ exports.checkAuthorization = (id,user) => {
         }
         return flag ;
 }
-
+//____________________________________________________________________________________________________________________________________
 exports.findComment = (commentID,post) => {
     var flag = {find:false,index:false}
     for(i=0;i<post.comments.length;i++)
@@ -15,7 +15,7 @@ exports.findComment = (commentID,post) => {
     }
     return flag ;
 }
-
+//____________________________________________________________________________________________________________________________________
 exports.findReact = (reactID,post) => {
     var flag = {find:false,index:false}
     for(i=0;i<post.Reacts.length;i++)
@@ -23,4 +23,4 @@ exports.findReact = (reactID,post) => {
         if(post.Reacts[i].id==reactID)  flag = {find:true,index:i}
     }
     return flag ;
-}
+}//____________________________________________________________________________________________________________________________________

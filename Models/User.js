@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+// user model
+
 const UserSchema = new mongoose.Schema({
            username: {    type: String,
                         min: 3,
@@ -21,9 +23,9 @@ const UserSchema = new mongoose.Schema({
                     index: true
                 },
 
-        // Userimage: {
-        //  type:String
-        // },
+        Userimage: {
+         type:String
+        },
 
         UserType: {
             type:String,

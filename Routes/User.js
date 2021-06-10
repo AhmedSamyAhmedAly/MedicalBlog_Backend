@@ -3,11 +3,11 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../Models/User')
 const authenticationMiddleware = require('../MiddleWares/Authentication');
-const logoutMiddleware = require('../MiddleWares/Logout');
 const helper = require('../RoutesHelpers/UserHelper')
 
 const userRouter = new express.Router();
 
+const upload = require("../MiddleWares/imgHandler");
 
 
 
@@ -26,11 +26,29 @@ userRouter.get('/getUsers',async(req,res)=>{
     }
 })
 
+
+//____________________________________________________________________________________________________________________________________
+
+
+
+userRouter.post("/img", authenticationMiddleware, upload.single('file'), async (req, res) => {
+    try {       
+        const obj = {
+            success: true,
+            Userimage: process.env.BUCKET_URL + req.file.key,
+        };
+        res.send(obj);
+    } catch (err) {
+        res.json({ success: false, message: err.message });
+    }
+});
+
+
 //____________________________________________________________________________________________________________________________________
 
 userRouter.post('/reg'  , async (req,res)=>{    // the registration router
     try{
-        const {username, email , password , UserType } = req.body;
+        const {username, email , password , UserType ,Userimage} = req.body;
         const hash = await bcrypt.hash(password,7); // to hash the password
         const user = await User.create({username, email ,password:hash,UserType })
         res.statusCode = 201;
@@ -126,17 +144,6 @@ userRouter.delete('/profileDelete' , async (req, res) => {
 
 
 //____________________________________________________________________________________________________________________________________
-userRouter.use(logoutMiddleware)
-//____________________________________________________________________________________________________________________________________
-userRouter.post('/logout'  , async (req,res)=>{      // the logout router
-    try {
-    res.send("logout succ");
-} catch (err) {
-    console.error(err);
-    res.statusCode = 422;
-    res.json({success: false, message: err.message});
-}
-});
 
 
 

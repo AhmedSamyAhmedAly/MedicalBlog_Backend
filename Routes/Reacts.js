@@ -3,7 +3,7 @@ const User = require('../Models/User')
 const Posts = require('../Models/Post')
 const helper = require('../RoutesHelpers/PostHelper')
 const ReactsRouter = new express.Router();
-
+//____________________________________________________________________________________________________________________________________
 ReactsRouter.post('/addReact/:id' , async (req, res) => {
     try{   
         const userById = await User.findById(req.signedData.id);  
@@ -25,7 +25,7 @@ ReactsRouter.post('/addReact/:id' , async (req, res) => {
         res.json({success: false, message: err.message});
     }
     })
-
+//____________________________________________________________________________________________________________________________________
 ReactsRouter.patch('/updateReact/:id/:rid' , async (req, res) => {
     try{   
         const userById = await User.findById(req.signedData.id);  
@@ -54,7 +54,7 @@ ReactsRouter.patch('/updateReact/:id/:rid' , async (req, res) => {
     }
     })
 
-
+//____________________________________________________________________________________________________________________________________
 
     ReactsRouter.delete('/deleteReact/:id/:rid' , async (req, res) => {
         try{   
@@ -78,7 +78,7 @@ ReactsRouter.patch('/updateReact/:id/:rid' , async (req, res) => {
             res.json({success: false, message: err.message});
         }
         })
-
+//____________________________________________________________________________________________________________________________________
 module.exports = ReactsRouter;
 
 
